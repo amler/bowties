@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 		uglify: {
 			dist: {
 				files: {
-					'assets/main-min-js/main.js': [
+					'assets/js/main-min.js': [
 						'assets/js/main.js'
 					]
 				}
@@ -41,13 +41,7 @@ module.exports = function(grunt) {
 					'assets/scss/**/*.scss'
 				],
 				tasks: ['sass']
-			},
-			html: {
-				files: [
-					'index.html'
-				],
-				tasks: ['copy:html']
-			},
+			},	
 			js: {
 				files: [
 					'assets/js/*.js',
@@ -66,7 +60,7 @@ module.exports = function(grunt) {
 
 	// Register Tasks
 	grunt.registerTask('javascript', ['jshint', 'uglify']);
-	grunt.registerTask('watch', ['javascript', 'sass']);
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('build', ['javascript', 'sass']);
+	grunt.registerTask('default', ['build']);
 	
 };
