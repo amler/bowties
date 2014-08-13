@@ -1,3 +1,7 @@
+@import 'modules/unsemantic-grid-responsive';
+@import 'modules/unsemantic-grid-responsive-tablet';
+
+
 body {
 	background: beige;
 	margin: 0;
@@ -5,7 +9,27 @@ body {
 }
 
 header {
-	background-color: #000;
+	background-color: beige;
 	height: 60px;
 	width: 100%;
+}
+
+.search {
+	button {
+		padding: 1px;
+		border: none;
+		background-color: #fff;
+		margin: 0 5px 0 -75px;
+		width: 65px;
+	}
+
+	input {
+		padding: 5px 70px 5px 5px;
+		border: none;
+		background-color: #fff;
+		background-image: url(../img/icons/search.png);
+		background-position: 0 50%; 
+		background-repeat: no-repeat;
+		outline: none;
+	}
 }
