@@ -9,27 +9,53 @@ body {
 }
 
 header {
-	background-color: beige;
+	background-color: violet;
 	height: 60px;
 	width: 100%;
+
+	h1 {
+		float: left;
+		margin: 0;
+		padding: 0;
+		a {
+			background: transparent url(../img/icons/logo.png) center center no-repeat;
+			overflow: hidden;
+			text-indent: 100%;
+			white-space: nowrap;
+		}
+	}
 }
 
 .search {
+	float: left;
+	margin: 0;
+	padding: 0;
+
 	button {
-		padding: 1px;
-		border: none;
 		background-color: #fff;
+		border: none;
 		margin: 0 5px 0 -75px;
-		width: 65px;
+		padding: 1px;
 	}
 
 	input {
-		padding: 5px 70px 5px 5px;
-		border: none;
+		background: transparent url(../img/icons/search.png) 0 50% no-repeat;
 		background-color: #fff;
-		background-image: url(../img/icons/search.png);
-		background-position: 0 50%; 
-		background-repeat: no-repeat;
+		border: none;
 		outline: none;
+		padding: 5px;
 	}
 }
+
+
+.feature-images {
+	height: 200px;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+	}
+}
+
+
+
