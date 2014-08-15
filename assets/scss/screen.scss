@@ -14,11 +14,25 @@ body {
 h2 {
 	color: $gold;
 	font-size: 1.714em;
+		letter-spacing: 0.25em;
+	margin: 0;
+	padding: 0;
+}
+
+h3 {
+	color: $gold;
+	font-size: 0.929em;
+	margin: 0;
 }
 
 p {
 	color: #7a7a7a;
+	margin: 0;
 }
+
+///////////////////////////////
+// Header
+///////////////////////////////
 
 header {
 	background-color: #000;
@@ -31,7 +45,6 @@ header {
 		margin: 0;
 		padding: 0;
 		width: 33.33%;
-		background-color: yellow;
 
 		button {
 			background-color: #fff;
@@ -42,11 +55,14 @@ header {
 
 		input {
 			background: transparent url(../img/icons/search.png) 0 50% no-repeat;
-			background-color: #333;
 			border: none;
 			outline: none;
 			margin: 18px 0 0 0;
 			padding: 5px 5px 5px 25px;
+
+			&:focus {
+				background-color: #fff;
+			}
 
 			&::-webkit-input-placeholder {
 				color: $gold;
@@ -60,7 +76,7 @@ header {
 		float: left;
 		margin: 15px 0 0;
 		padding: 0 auto;
-		text-align: center;
+		// text-align: center;
 		width: 33.33%;
 		background-color: blue;
 		a {
@@ -109,6 +125,10 @@ header {
 	}
 }
 
+///////////////////////////////
+// B&W Images
+///////////////////////////////
+
 .feature-images {
 	height: 200px;
 	overflow: hidden;
@@ -118,6 +138,10 @@ header {
 	}
 }
 
+
+///////////////////////////////
+// Nav Menu
+///////////////////////////////
 nav {
 	background-color: #333;
 	height: 60px;
@@ -137,20 +161,26 @@ nav {
 			&:first-child {
 				padding: 0;
 			}
+
 			a {
 				color: $gold;
 				text-decoration: none;
 			}
-
-			ul {
-				border-bottom: 1px solid #ccc;
-				height: 60px;
-				width: 100%;
-			}
 		}
 	}
 }
+///////////////////////////////
+// second nav
+///////////////////////////////
 
+nav + nav {
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+
+///////////////////////////////
+// Our Story
+///////////////////////////////
 
 .about {
 	margin-bottom: 200px;
@@ -168,6 +198,46 @@ nav {
 	}	
 }
 
+
+///////////////////////////////
+// Category
+///////////////////////////////
+
+.product-listing {
+	padding: 40px 0 20px;
+
+	.product {
+		margin: 40px 0 65px;
+		text-align: center;
+		text-transform: uppercase;
+		padding-left: 0;
+		padding-right: 0;
+
+		img {
+			margin: 0 0 15px 0;
+		}
+
+		h2 {
+			font-size: 1em;
+		}
+
+		p {
+			margin-top: -8px;
+		}
+
+	}
+}
+
+///////////////////////////////
+// Footer
+///////////////////////////////
+
 footer {
-	height: 30px;
+	border: 1px solid blue;
+	
+
+	.contact-info {
+		background-color: #000;
+		height: 185px;
+	}
 }
