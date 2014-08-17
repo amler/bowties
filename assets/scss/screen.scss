@@ -2,6 +2,7 @@
 @import 'modules/unsemantic-grid-responsive';
 @import 'modules/unsemantic-grid-responsive-tablet';
 @import 'modules/product-detail';
+@import 'modules/footer';
 @import 'modules/header';
 
 body {
@@ -67,7 +68,7 @@ a {
 ///////////////////////////////
 nav {
 	background-color: #000;
-	height: 60px;
+	min-height: 60px;
 	text-align: center;
 	text-transform: uppercase;
 
@@ -78,7 +79,7 @@ nav {
 
 		li {
 			display: inline-block;
-			margin: 20px 0 0 0;
+			margin: 20px 0 10px 0;
 			padding: 0 0 0 30px;
 
 			&:first-child {
@@ -141,92 +142,5 @@ nav {
 			margin-top: -8px;
 		}
 
-	}
-}
-
-///////////////////////////////
-// Footer
-///////////////////////////////
-
-footer {
-	text-transform: uppercase;
-	
-	a {
-		text-decoration: underline;
-	}
-
-	section {
-		background-color: #000;
-		height: 185px;
-
-		div:first-child {
-			padding-left: 0;
-			padding-right: 0;
-		}
-
-		p {
-			color: #fff;
-			font-size: 0.714em;
-			line-height: 2em;
-			margin: 15px 0 0 0;
-		}
-
-
-		.social {
-
-			h3 {
-				margin-left: 80px;
-				margin-bottom: 15px;
-			}
-
-			h3 + a {
-				margin-left: 80px;
-			}
-
-			a {
-				display: inline-block;
-				height: 25px;
-				overflow: hidden;
-				text-indent: 100%;
-				white-space: nowrap;
-				width: 25px;
-				-webkit-background-size: 25px 25px;
-				   -moz-background-size: 25px 25px;
-				     -o-background-size: 25px 25px;
-						background-size: 25px 25px;
-			}
-
-			a.twitter {
-				background: transparent url(../img/icons/twitter.png) center center no-repeat;
-			}
-			a.facebook {
-				background: transparent url(../img/icons/facebook.png) center center no-repeat;
-			}
-			a.pinterest {
-				background: transparent url(../img/icons/pinterest.png) center center no-repeat;
-			}
-		}
-	}
-
-	ul {
-		list-style-type: none;
-		float: right;
-		font-size: 0.714em;
-		margin: 10px 0;
-		padding: 0;
-
-		li {
-			float: left;
-
-			a {
-				&:hover {
-					color: #000;
-				}
-			}
-
-			&:first-child {
-				margin-right: 20px;
-			}
-		}
 	}
 }
