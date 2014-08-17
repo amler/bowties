@@ -1,7 +1,7 @@
+@import 'modules/variables';
 @import 'modules/unsemantic-grid-responsive';
 @import 'modules/unsemantic-grid-responsive-tablet';
-
-$gold: #b49a58;
+@import 'modules/header';
 
 body {
 	background: #fff;
@@ -30,100 +30,6 @@ p {
 	margin: 0;
 }
 
-///////////////////////////////
-// Header
-///////////////////////////////
-
-header {
-	background-color: #000;
-	height: 60px;
-	text-transform: uppercase;
-	width: 100%;
-
-	.search {
-		float: left;
-		margin: 0;
-		padding: 0;
-		width: 33.33%;
-
-		button {
-			background-color: #fff;
-			border: none;
-			margin: 0 5px 0 -75px;
-			padding: 1px;
-		}
-
-		input {
-			background: transparent url(../img/icons/search.png) 0 50% no-repeat;
-			border: none;
-			outline: none;
-			margin: 18px 0 0 0;
-			padding: 5px 5px 5px 25px;
-
-			&:focus {
-				background-color: #fff;
-			}
-
-			&::-webkit-input-placeholder {
-				color: $gold;
-				letter-spacing: 0.125em;
-				text-transform: uppercase;
-			}
-		}
-	}
-
-	h1 {
-		float: left;
-		margin: 15px 0 0;
-		padding: 0 auto;
-		// text-align: center;
-		width: 33.33%;
-		background-color: blue;
-		a {
-			background: transparent url(../img/icons/logo.png) center center no-repeat;
-			display: block;
-			overflow: hidden;
-			height: 29px;
-			width: 37px;
-			text-indent: 100%;
-			white-space: nowrap;
-			-webkit-background-size: 37px 29px;
-			   -moz-background-size: 37px 29px;
-			     -o-background-size: 37px 29px;
-					background-size: 37px 29px;
-		}
-	}
-
-	ul {
-		font-size: 0.786em;
-		float: right;
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		width: 33.33%;
-		background-color: green;
-
-		li {
-			float: left;
-			margin: 24px 0 0 0;
-
-			a {
-				color: $gold;
-				display: block;
-				margin: 0;
-				text-decoration: none;
-
-				&:hover {
-					color: #fff;
-				}
-			}
-			&:first-child a {
-				background: transparent url(../img/icons/cart.png) 0 center no-repeat;
-				padding: 0 25px 0 25px;
-			}
-		}
-	}
-}
 
 ///////////////////////////////
 // B&W Images
