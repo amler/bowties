@@ -66,7 +66,7 @@
 
 
 	<section class="grid-container product-detail">
-		<div class="grid-50">
+		<div class="grid-50 mobile-grid-100">
 			<img src="assets/img/bowties/bowtie-detail.jpg">
 			<ul>
 				<li>
@@ -82,7 +82,7 @@
 			</ul>
 
 		</div>
-		<div class="grid-50">
+		<div class="grid-50 mobile-grid-100 ">
 			<h2>Jolly Roger</h2>
 			<p>$60.00</p>
 			<p>This bowtie is all silk and made in the USA.</p>
@@ -90,6 +90,7 @@
 			<form action="" method="post">
 				<label for="tie-shape">Tie Shape</label>
 				<select>
+					<option selected>Select One</option>
 					<option>Butterfly</option>
 					<option>Big Butterfly</option>
 					<option>Batwing</option>
@@ -98,13 +99,53 @@
 				</select>
 				<label for="tie-size">Tie Size</label>
 				<select>
+					<option selected>Select One</option>
 					<option>Regular - (fits to 17 ¾")</option>
 					<option>XL - up to 20 inches</option>
 					<option>XXL - adjusts 19 - 21 inches</option>
 				</select>
 				<hr>
-				<button id="login" class="button">Add to Cart</button>
+				<button>Add to Cart</button>
 			</form>
+<div class="social-button-container">
+
+	<!-- Facebook -->
+	<div class="social-fb">
+		<div class="fb-like" data-href="#" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+	</div>
+
+	<!-- Twitter -->
+	<div class="social-twitter">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="RHanauerBowties">Tweet</a>
+	</div>
+
+	<!-- Google Plus -->
+	<div class="social-gplus"></div>
+
+	<!-- LinkedIN -->
+	<div class="social-linkedin"></div>
+
+</div>
+
+
+			
+			
+
+			<script>
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+			</script>
+
+			<div id="fb-root"></div>
+			<script>
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1452074678387921&version=v2.0";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+			</script>
 		</div>
 	</section>
 
@@ -119,7 +160,7 @@
 				<li><a href="#">Woven</a></li>
 			</ul>
 		</nav>
-		<div class="grid-25 mobile-grid-50 product">
+		<div class="grid-25 mobile-grid-100 product">
 			<img src="assets/img/bowties/bowtie-1.jpg">
 			<h2>Tartans</h2>
 			<p>$60.00</p>

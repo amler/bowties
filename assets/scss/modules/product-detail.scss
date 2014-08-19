@@ -29,7 +29,7 @@
 	}
 
 	h2 + p {
-		font-size: 1.286em;
+		font-size: 1.286em ;
 		margin-bottom: 16px;
 	}
 
@@ -38,9 +38,14 @@
 	}
 
 	hr {
-		margin-top: 30px;
+		margin-top: 35px;
 	}
-	select {
+
+	label, select {
 		display: block;
+	}
+
+	label {
+		margin: 25px 0 10px 0;
 	}
 }
