@@ -7,12 +7,8 @@ footer {
 
 	section {
 		background-color: #000;
-		height: 185px;
-
-		div:first-child {
-			padding-left: 0;
-			padding-right: 0;
-		}
+		min-height: 180px;
+		padding: 15px 0;
 
 		p {
 			color: #fff;
@@ -24,13 +20,23 @@ footer {
 		.social {
 
 			h3 {
-				margin-left: 80px;
 				margin-bottom: 15px;
+				margin-left: 80px;
+				
+				@media only screen and (max-width: 767px) {
+					margin-left: 0;
+					margin-top: 25px;
+				}
 			}
 
 			h3 + a {
 				margin-left: 80px;
+
+				@media only screen and (max-width: 767px) {
+					margin-left: 0;
+				}
 			}
+
 
 			a {
 				display: inline-block;
@@ -75,6 +81,27 @@ footer {
 
 			&:first-child {
 				margin-right: 20px;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 625px) {
+		h4 {
+			float: none;
+			text-align: center;
+		}
+
+		ul {
+			float: none;
+			margin: 0;
+
+			li {
+				float: none;
+				text-align: center;
+				
+				&:first-child {
+					margin-right: 0;
+				}
 			}
 		}
 	}
