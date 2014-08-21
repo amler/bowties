@@ -65,6 +65,39 @@ header {
 			&:first-child a {
 				background: transparent url(../img/icons/cart.png) 0 center no-repeat;
 				padding: 0 25px 0 25px;
+
+				@media only screen and (max-width: 875px) {
+					padding-right: 5%;
+				}
+			}
+		}
+	}
+	@media only screen and (max-width: 766px) {
+
+		input {
+			width: 100%;
+			margin: 18px auto 0;
+			padding: 5px 5px 5px 25px;
+			@include box-sizing(border-box);
+
+			&:focus {
+				background-color: #fff;
+			}
+
+			&::-webkit-input-placeholder {
+				color: $gold;
+				letter-spacing: 0.125em;
+				text-transform: uppercase;
+			}
+		}
+
+		ul {
+			float: none;
+			text-align: center;
+
+			li {
+				margin: 0;
+				padding: 15px;
 			}
 		}
 	}
