@@ -30,8 +30,8 @@
 	<link rel="stylesheet" href="assets/css/screen.css" />
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
 </head>
-<body>
 
+<body>
 	<header>
 		<div class="grid-container">
 			<h1 class="grid-60  push-20 mobile-grid-100 grid-parent"><a href="#">Bowties</a></h1>
@@ -47,12 +47,9 @@
 			</div>
 		</div>
 	</header>
-
-	<section class="homepage-image">
-		<!-- <img src="assets/img/banner/threads.jpg"> -->
-		<p>
-			R. Hanauer bowties, cummerbund sets, and D-ring belts are hand-made-to-order at our workshop in Fort Mill, SC. If you are unsure about a color or design, just ask. We will be happy to send you a free sample.
-		</p>
+	
+	<section class="feature-images">
+		<img src="assets/img/banner/threads.jpg">
 	</section>
 
 	<nav>
@@ -68,39 +65,69 @@
 		</ul>
 	</nav>
 
-	<section class="home">
+	<section class="grid-container contact">
+		<h2>Contact Us</h2>
+		<p>
+			Our goal is your total satisfaction. We welcome your concerns, suggestions and comments. You are welcome to contact us by by calling toll-free 800-514-9707.
+		</p>
+		<p>
+			Address:<br/>
+			R. Hanauer, Inc.<br/>
+			P.O. Box 1447<br/>
+			Fort Mill, SC 29716<br/>
+		</p>
+		<h3>Questions?</h3>
+		<p>
+			You can contact us by email at: <a href="mailto:support@bowties.com?subject=Questions">support@bowties.com</a> or complete the contact form below.
+		</p>
+		<form action="" method="">
+			<p>
+				<label for="first-name">First Name*</label>
+				<input type="text" id="first-name" />
 
-		<div class="grid-container">
-			<div class="grid-25 tablet-grid-50 mobile-grid-100 product">
-				<div>
-					<img src="assets/img/bowties/bowtie-1.jpg">
-				</div>
-				<h2>Tartans</h2>
-				<p>$60.00</p>
-			</div>
-			<div class="grid-25 tablet-grid-50 mobile-grid-100 product">
-				<div>
-					<img src="assets/img/bowties/bowtie-1.jpg">
-				</div>
-				<h2>Tartans</h2>
-				<p>$60.00</p>
-			</div>
-			<div class="grid-25 tablet-grid-50 mobile-grid-100 product">
-				<div>
-					<img src="assets/img/bowties/bowtie-1.jpg">
-				</div>
-				<h2>Tartans</h2>
-				<p>$60.00</p>
-			</div>
-			<div class="grid-25 tablet-grid-50 mobile-grid-100 product">
-				<div>
-					<img src="assets/img/bowties/bowtie-1.jpg">
-				</div>
-				<h2>Tartans</h2>
-				<p>$60.00</p>
-			</div>
-		</div>
+				<label for="last-name">Last Name*</label>
+				<input type="text" id="last-name" />
+			</p>
+			<p>
+				<label for="company">Company</label>
+				<input type="text" id="company" />
+				
+				<label for="mail">Street Address</label>
+				<input type="text" id="mail" />
+			</p>
+			<p>
+				<label for="city">City*</label>
+				<input type="text" id="city" />
 
+				<label for="phone">Phone</label>
+				<input type="tel" id="phone" />
+			</p>
+			<p>
+				<label for="mobile">Mobile No.</label>
+				<input type="tel" id="mobile" />
+				
+				<label for="email">Email*</label>
+				<input type="email" id="email" />
+			</p>
+			<p>
+				<label for="subject">Subject*</label>
+				<input type="subject" id="subject" />
+			</p>
+			<p>
+				<label for="msg">Query / Comment*</label>
+				<textarea id="msg"></textarea>
+			</p>
+			<fieldset>
+				<legend>How would you like us to respond to your comments / query?*</legend>
+				
+				<input type="radio" name="respond-type" id="call" value="Call me" />
+				<label for="call">Call me</label>
+				
+				<input type="radio" name="respond-type" id="email" value="Email me" />
+				<label for="email">Email me</label>
+			</fieldset>
+			<button type="submit">Send your message</button>
+		</form>
 	</section>
 	
 	<footer>
@@ -109,7 +136,8 @@
 				<div class="grid-33 mobile-grid-50">
 					<h3>Contact</h3>
 					<p>
-						<a href="mailto:support@bowties.com">support@bowties.com</a><br/>
+						<a href="mailto:support@bowties.com">support@bowties.com</a>
+						<br/>
 						<a href="tel:800-514-9707" class="phone">800-514-9707</a>
 					</p>
 					<p>
@@ -121,8 +149,8 @@
 				<div class="grid-33 mobile-grid-50">
 					<h3>Orders</h3>
 					<p>
-						<a href="#">Shipping &amp; Returns</a><br/>
-						<a href="#">Retail Inquiries</a>
+						<a href="mailto:support@bowties.com">Shipping &amp; Returns</a><br/>
+						<a href="mailto:support@bowties.com">Retail Inquiries</a>
 					</p>
 				</div>
 				<div class="grid-33 mobile-grid-50 social">
@@ -144,4 +172,3 @@
 
 	<script src="assets/js/main-min.js"></script>
 </body>
-</html>

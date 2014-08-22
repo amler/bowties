@@ -7,8 +7,13 @@ footer {
 
 	section {
 		background-color: #000;
-		min-height: 180px;
-		padding: 15px 0;
+		min-height: 170px;
+		padding: 15px 0 0 0;
+
+		a.phone {
+			color: #fff;
+			text-decoration: none;
+		}
 
 		p {
 			color: #fff;
@@ -37,12 +42,12 @@ footer {
 				}
 			}
 
-
 			a {
 				display: inline-block;
 				height: 25px;
 				overflow: hidden;
 				text-indent: 100%;
+				margin: 0 0 24px 0;
 				white-space: nowrap;
 				width: 25px;
 				-webkit-background-size: 25px 25px;
@@ -71,8 +76,7 @@ footer {
 		padding: 0;
 
 		li {
-			float: left;
-
+			display: inline-block;
 			a {
 				&:hover {
 					color: #000;
@@ -93,16 +97,8 @@ footer {
 
 		ul {
 			float: none;
-			margin: 0 0 20px;
-
-			li {
-				float: none;
-				text-align: center;
-				
-				&:first-child {
-					margin-right: 0;
-				}
-			}
+			margin-bottom: 20px;
+			text-align: center;
 		}
 	}
 }

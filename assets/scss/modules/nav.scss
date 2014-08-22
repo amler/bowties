@@ -1,0 +1,18 @@
+nav {
+	background-color: #000;
+	min-height: 60px;
+	text-align: center;
+	text-transform: uppercase;
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			margin: 20px 0 10px 0;
+			padding: 0 15px;
+		}
+	}
+}
