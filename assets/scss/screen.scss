@@ -78,32 +78,32 @@ button {
 ///////////////////////////////
 .homepage-image {
 
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/banner/homepage-banner.jpg') center center no-repeat fixed;
-	// background-color: rgba(0, 0, 0, 0.5);
+	background: url('../img/banner/homepage-banner.jpg') center center no-repeat fixed;
 	height: 500px;
 	position: relative;
 	text-align: center;
-	-webkit-background-size: 100%;
-	   -moz-background-size: 100%;
-		 -o-background-size: 100%;
-			background-size: 100%;
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+		 -o-background-size: cover;
+			background-size: cover;
 
 	p {
+		border: 1px solid blue;
 		color: #fff;
 		font-size: 1.571em;
-		left: 25%;
+		left: 50%;
 		line-height: 200%;
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 945px;
-		padding: 0;
+		padding: 20px;
 		position: absolute;
 		text-transform: uppercase;
-		top: 25%;
+		top: 50%;
 		width: 100%;
-		-webkit-transform: -25% -25%;
-			-ms-transform: -25% -25%;
-				transform: -25% -25%;
+		-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
 	}
 }
 
