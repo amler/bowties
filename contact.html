@@ -74,56 +74,70 @@
 			P.O. Box 1447<br/>
 			Fort Mill, SC 29716<br/>
 		</p>
-		<p><strong>Questions?</strong><br/>
+		<p><span>Questions?</span><br/>
 			You can contact us by email at: <a href="mailto:support@bowties.com?subject=Questions">support@bowties.com</a> or complete the contact form below.
 		</p>
-		<form action="" method="">
-			<p>
-				<label for="first-name">First Name*</label>
-				<input type="text" id="first-name" />
-
-				<label for="last-name">Last Name*</label>
-				<input type="text" id="last-name" />
-			</p>
-			<p>
-				<label for="company">Company</label>
-				<input type="text" id="company" />
-				
-				<label for="mail">Street Address</label>
-				<input type="text" id="mail" />
-			</p>
-			<p>
-				<label for="city">City*</label>
-				<input type="text" id="city" />
-
-				<label for="phone">Phone</label>
-				<input type="tel" id="phone" />
-			</p>
-			<p>
-				<label for="mobile">Mobile No.</label>
-				<input type="tel" id="mobile" />
-				
-				<label for="email">Email*</label>
-				<input type="email" id="email" />
-			</p>
-			<p>
-				<label for="subject">Subject*</label>
-				<input type="subject" id="subject" />
-			</p>
-			<p>
-				<label for="msg">Query / Comment*</label>
-				<textarea id="msg"></textarea>
-			</p>
+		<form action="" method="" class="grid-parent">
 			<fieldset>
-				<legend>How would you like us to respond to your comments / query?*</legend>
+				<p class="grid-50">
+					<label for="first-name">First Name*</label>
+					<input type="text" id="first-name" />
+				</p>
+
+				<p class="grid-50">
+					<label for="last-name">Last Name*</label>
+					<input type="text" id="last-name" />
+				</p>
+
+				<p class="grid-50">
+					<label for="company">Company</label>
+					<input  type="text" id="company" />
+				</p>
+
+				<p class="grid-50">	
+					<label for="mail">Street Address</label>
+					<input  type="text" id="mail" />
+				</p>
+
+				<p class="grid-50">
+					<label for="city">City*</label>
+					<input  type="text" id="city" />
+				</p>
+
+				<p class="grid-50">
+					<label for="phone">Phone</label>
+					<input  type="tel" id="phone" />
+				</p>
+
+				<p class="grid-50">
+					<label for="mobile">Mobile No.</label>
+					<input  type="tel" id="mobile" />
+				</p>
 				
-				<input type="radio" name="respond-type" id="call" value="Call me" />
-				<label for="call">Call me</label>
+				<p class="grid-50">
+					<label for="email">Email*</label>
+					<input  type="email" id="email" />
+				</p>
+
+				<p class="grid-100">
+					<label for="subject">Subject*</label>
+					<input  type="subject" id="subject" />
+				</p>
+
+				<p class="grid-100">
+					<label for="msg">Query / Comment*</label>
+					<textarea id="msg"></textarea>
+				</p>
 				
-				<input type="radio" name="respond-type" id="email" value="Email me" />
-				<label for="email">Email me</label>
+					<p>How would you like us to respond to your comments / query?*</p>
+					
+					<input type="radio" name="respond-type" id="call" value="Call me" />
+					<label for="call">Call me</label>
+					
+					<input type="radio" name="respond-type" id="email" value="Email me" />
+					<label for="email">Email me</label>
+				<button type="submit">Send your message</button>
 			</fieldset>
-			<button type="submit">Send your message</button>
 		</form>
 	</section>
 	
