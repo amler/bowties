@@ -56,12 +56,13 @@ a {
 	}
 }
 
+
 a.active {
-	color: #000;
+	color: #fff;
 }
 
-nav:first-child > a.active {
-	color: #fff;
+.product-listing > nav a.active {
+	color: #000;
 }
 
 footer a:hover,
