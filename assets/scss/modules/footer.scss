@@ -3,6 +3,10 @@ footer {
 	
 	a {
 		text-decoration: underline;
+		
+		&:hover {
+			text-decoration: none;
+		}
 	}
 
 	section {
@@ -13,6 +17,9 @@ footer {
 		a.phone {
 			color: #fff;
 			text-decoration: none;
+		}
+		a {
+			color: #fad9b8;
 		}
 
 		p {
@@ -43,27 +50,25 @@ footer {
 			}
 
 			a {
+				background-color: #f08;
 				display: inline-block;
-				height: 25px;
+				height: 27px;
+				margin: 0 0 24px 0;
 				overflow: hidden;
 				text-indent: 100%;
-				margin: 0 0 24px 0;
 				white-space: nowrap;
-				width: 25px;
-				-webkit-background-size: 25px 25px;
-				   -moz-background-size: 25px 25px;
-				     -o-background-size: 25px 25px;
-						background-size: 25px 25px;
+				width: 27px;
 			}
 
 			a.twitter {
-				background: transparent url(../img/icons/twitter.png) center center no-repeat;
+				@include retina-background-image('icon-social', 0 0);
 			}
+
 			a.facebook {
-				background: transparent url(../img/icons/facebook.png) center center no-repeat;
+				@include retina-background-image('icon-social', 0 -27px);
 			}
 			a.pinterest {
-				background: transparent url(../img/icons/pinterest.png) center center no-repeat;
+				@include retina-background-image('icon-social', 0 -81px);
 			}
 		}
 	}

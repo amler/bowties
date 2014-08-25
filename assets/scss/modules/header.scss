@@ -9,11 +9,11 @@ header {
 		padding: 0;
 
 		input {
-			background: transparent url(../img/icons/search.png) 5px 50% no-repeat;
 			border: none;
 			margin: 18px 0 0 0;
 			outline: none;
 			padding: 5px 5px 5px 25px;
+			@include retina-background-image('search', 5px 50%);
 
 			&:focus {
 				background-color: #fff;
@@ -32,17 +32,14 @@ header {
 		text-align: center;
 
 		a {
-			background: transparent url(../img/icons/logo.png) center center no-repeat;
 			display: inline-block;
 			height: 29px;
 			overflow: hidden;
 			text-indent: 100%;
 			white-space: nowrap;
 			width: 37px;
-			-webkit-background-size: 37px 29px;
-			   -moz-background-size: 37px 29px;
-			     -o-background-size: 37px 29px;
-					background-size: 37px 29px;
+			@include retina-background-image('logo', center center);
+			@include background-size(37px 29px);
 		}
 	}
 
@@ -63,7 +60,7 @@ header {
 			}
 
 			&:first-child a {
-				background: transparent url(../img/icons/cart.png) 0 center no-repeat;
+				@include retina-background-image('cart', 0 center);
 				padding: 0 25px 0 25px;
 
 				@media only screen and (max-width: 875px) {
@@ -74,21 +71,12 @@ header {
 	}
 	@media only screen and (max-width: 766px) {
 
-		input {
+		.search input {
+			background-color: #fff;
+			margin-left: auto;
+			margin-right: auto;
 			width: 100%;
-			margin: 18px auto 0;
-			padding: 5px 5px 5px 25px;
 			@include box-sizing(border-box);
-
-			&:focus {
-				background-color: #fff;
-			}
-
-			&::-webkit-input-placeholder {
-				color: $gold;
-				letter-spacing: 0.125em;
-				text-transform: uppercase;
-			}
 		}
 
 		ul {

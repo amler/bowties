@@ -49,10 +49,19 @@ p {
 a {
 	color: $gold;
 	text-decoration: none;
+	@include transition(color, 0.3s, linear);
 
 	&:hover {
 		color: #000;
 	}
+}
+
+a.active {
+	color: #000;
+}
+
+nav:first-child > a.active {
+	color: #fff;
 }
 
 footer a:hover,
@@ -77,66 +86,117 @@ button {
 // Home
 ///////////////////////////////
 .homepage-image {
-
 	background: url('../img/banner/homepage-banner.jpg') center center no-repeat fixed;
 	height: 500px;
 	position: relative;
 	text-align: center;
-	-webkit-background-size: cover;
-	   -moz-background-size: cover;
-		 -o-background-size: cover;
-			background-size: cover;
+	@include background-size(cover);
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(0, 0 , 0, 0.5);
+	}
 
 	p {
-		border: 1px solid blue;
 		color: #fff;
 		font-size: 1.571em;
 		left: 50%;
 		line-height: 200%;
-		margin-left: auto;
-		margin-right: auto;
+		margin: 0 auto;
 		max-width: 945px;
-		padding: 20px;
 		position: absolute;
 		text-transform: uppercase;
 		top: 50%;
 		width: 100%;
+		z-index: 10;
 		-webkit-transform: translate(-50%, -50%);
 			-ms-transform: translate(-50%, -50%);
 				transform: translate(-50%, -50%);
+		
+		@media only screen and (max-width: 955px) {
+			font-size: 1.286em;
+		}
+
+		@media only screen and (max-width: 600px) {
+			font-size: 1em;
+		}
 	}
 }
 
+.home {
+	padding-top: 45px;
+	padding-bottom: 75px;
+}
 
+.product a {
+	margin: 0 auto;
+	width: 230px;
 
+	img {
+		margin: 0 0 10px 0;
+		width: 100%;
+	}
+
+	h2 {
+		font-size: 1em;
+	}
+
+	p {
+		margin-top: -8px;
+	}
+}
 ///////////////////////////////
-// B&W Images
+// B&W Banner Images
 ///////////////////////////////
+
+.about {
+	background: url('../img/banner/hanauer.jpg') center center no-repeat fixed;
+}
+
+.shipping {
+	background: url('../img/banner/sewing-machine.jpg') center center no-repeat fixed;
+}
+
+.inqueries {
+	background: url('../img/banner/template-sewing.jpg') center center no-repeat fixed;
+}
+
+.contact {
+	background: url('../img/banner/threads.jpg') center center no-repeat fixed;
+}
+
+// .product-listing {
+// 	background: url('../img/banner/threads.jpg') center center no-repeat fixed;
+// }
+
+// .product-detail {
+// 	background: url('../img/banner/bow-model.jpg') center center no-repeat fixed;
+// }
 
 .feature-images {
 	height: 200px;
-	overflow: hidden;
-
-	img {
-		margin-top: -3%;
-		width: 100%;
-	}
+	// overflow: hidden;
+	@include background-size(cover);
 }
-
 ///////////////////////////////
 // Text Only Pages
 ///////////////////////////////
-.inquiries,
-.contact,
-.shippping-returns,
-.about {
+
+.text {
 	margin-bottom: 200px;
 
 	h2 {
 		margin: 70px 0 55px 0;
 		padding: 0;
 	}
-	h2 + p {
+	h2 + p,
+	span {
+		color: blue;
 		font-size: 1.286em;
 	}
 
@@ -144,3 +204,4 @@ button {
 		margin: 37px 0;
 	}	
 }
+
