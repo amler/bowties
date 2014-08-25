@@ -82,10 +82,6 @@ button {
 	padding: 15px 30px;
 }
 
-textarea {
-	width: 100%;
-	height: 80px;
-}
 ///////////////////////////////
 // Home
 ///////////////////////////////
@@ -174,13 +170,13 @@ textarea {
 	background: url('../img/banner/threads.jpg') center center no-repeat fixed;
 }
 
-// .product-listing {
-// 	background: url('../img/banner/threads.jpg') center center no-repeat fixed;
-// }
+.listings {
+	background: url('../img/banner/threads.jpg') center center no-repeat fixed;
+}
 
-// .product-detail {
-// 	background: url('../img/banner/bow-model.jpg') center center no-repeat fixed;
-// }
+.detail-page {
+	background: url('../img/banner/bow-model.jpg') center center no-repeat fixed;
+}
 
 .feature-images {
 	height: 200px;
