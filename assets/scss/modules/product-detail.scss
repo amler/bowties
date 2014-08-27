@@ -53,9 +53,20 @@
 		margin: 25px 0 10px 0;
 	}
 
-	.social-button-container {
-		background-color: beige;
+	.social {
+		background-color: #f08;
 		margin: 5px 0 0 0;
-		height: 30px;
+	}
+	.google-plus, .twitter, .pinterest, .facebook {
+		float: left;
+		margin-right: 10px;
+		position:relative;
+		top: auto;
+	}
+	.twitter-share-button {
+		width: 80px !important;
+	}
+	.fb-like.fb_iframe_widget span {
+		vertical-align: top !important;
 	}
 }

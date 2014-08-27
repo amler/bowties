@@ -81,7 +81,17 @@ button {
 	letter-spacing: 0.25em;
 	margin: 30px 0;
 	padding: 15px 30px;
+	@include transition(background-color, 0.2s, linear);
+
+	&:hover {
+		background-color: darken($gold, 10%);
+	}
 }
+
+input {
+	font-family: inherit;
+}
+
 
 ///////////////////////////////
 // Home
@@ -160,23 +170,23 @@ button {
 }
 
 .shipping {
-	background: url('../img/banner/sewing-machine.jpg') center center no-repeat fixed;
+	background: url('../img/banner/sewing-machine.jpg') center top no-repeat ;
 }
 
 .inqueries {
-	background: url('../img/banner/template-sewing.jpg') center center no-repeat fixed;
+	background: url('../img/banner/template-sewing.jpg') center top no-repeat ;
 }
 
 .contact {
-	background: url('../img/banner/threads.jpg') center center no-repeat fixed;
+	background: url('../img/banner/threads.jpg') center top no-repeat ;
 }
 
 .listings {
-	background: url('../img/banner/threads.jpg') center center no-repeat fixed;
+	background: url('../img/banner/threads.jpg') center top no-repeat ;
 }
 
 .detail-page {
-	background: url('../img/banner/bow-model.jpg') center center no-repeat fixed;
+	background: url('../img/banner/bow-model.jpg') center top no-repeat ;
 }
 
 .feature-images {
