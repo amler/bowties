@@ -15,12 +15,15 @@
 		padding-right: 0;
 		
 		div {
+			height: 142px;
 			margin: 0 auto;
 			width: 230px;
 		}
 
 		img {
-			margin: 0 0 10px 0;
+			display:block;
+			margin: 0 auto 10px;
+			vertical-align: middle;
 			width: 100%;
 		}
 

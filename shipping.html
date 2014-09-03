@@ -100,7 +100,9 @@
 				<div class="grid-33 mobile-grid-50">
 					<h3>Orders</h3>
 					<p>
-						<a href="#">Shipping &amp; Returns</a><br/>
+						{% for link in linklists[settings.footer_linklist].links %}
+							<a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+						{% endfor %}
 						<a href="#">Retail Inquiries</a>
 					</p>
 				</div>

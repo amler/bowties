@@ -47,12 +47,9 @@
 			</div>
 		</div>
 	</header>
-
-	<section class="feature-images detail-page"></section>
-	
 	<nav>
 		<ul>
-			<li><a href="#">Bowties</a></li>
+			<li><a href="#" class="active">Bowties</a></li>
 			<li><a href="#">Neckties</a></li>
 			<li><a href="#">Squares</a></li>
 			<li><a href="#">Hankerchiefs</a></li>
@@ -63,97 +60,87 @@
 		</ul>
 	</nav>
 
-	<section class="grid-container product-detail">
-		<div class="grid-50 mobile-grid-100">
-			<img src="assets/img/bowties/bowtie-detail.jpg">
-			<form action="" method="">
-			<ul>
-				<li>
-					<a href="#"><img src="assets/img/bowties/bowtie-detail.jpg"></a>
-				</li>
-				<li>
-					<a href="#"><img src="assets/img/bowties/color-option.jpg"></a>
-				</li>
-				<li>
-					<a href="#"><img src="assets/img/bowties/color-option.jpg"></a>
-				</li>
-				
-			</ul>
+	<section class="grid-container">
+<h2 style="margin-top: 74px">Your Cart</h2>
+<form action="/cart" method="post" id="cart" class="cart">
+	<table>
+		<thead>
+			<tr>
+				<th class="item image"></th>
+				<th class="item desc"></th>
+				<th class="item price">Price</th>
+				<th class="item qty">Quantity</th>
+				<th class="item remove">Delete</th>
+				<th class="item total-price">Total</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr id="cart-item-809255011" class="cart-item">
+				<td class="item image">
+					<a href="/products/jolly-roger?variant=809255011">
+						<img src="//cdn.shopify.com/s/files/1/0628/2445/products/jolly-roger-purple_small.jpg?v=1409281964"  alt="Jolly Roger - Purple Jolly Roger / Louie 2 3/8 inch Diamond End / XL - up to 20 inches" />
+					  </a>
+				</td>
+				<td class="item desc">
+					<a href="/collections/bowties#jolly-roger">Purple Jolly Roger - Louie 2 3/8 inch Diamond End, XL - up to 20 inches</a>
+				</td>
+				<td class="item price">
+					$60.00
+				</td>
+				<td class="item qty">
+					<input type="text" size="4" pattern="[0-9]*" name="updates[809255011]" id="quantity-809255011" class="quantity" value="1" min="1" onfocus="this.select();"/>
+				</td>
+				<td class="item remove">
+					<a href="/cart/change/809255011?quantity=0">Remove</a>
+				</td>
+				<td class="item total-price">$60.00</td>
+			</tr>
+			
 
-		</div>
-		<div class="grid-50 mobile-grid-100 ">
-			<h2>Jolly Roger</h2>
-			<p>$60.00</p>
-			<p>This bowtie is all silk and made in the USA.</p>
-			<hr>
-			<form action="" method="">
-				<label for="tie-shape">Tie Shape</label>
-				<select>
-					<option selected>Select One</option>
-					<option>Butterfly</option>
-					<option>Big Butterfly</option>
-					<option>Batwing</option>
-					<option>Diamond Point</option>
-					<option>Club Round</option>
-				</select>
-				<label for="tie-size">Tie Size</label>
-				<select>
-					<option selected>Select One</option>
-					<option>Regular - (fits to 17 ¾")</option>
-					<option>XL - up to 20 inches</option>
-					<option>XXL - adjusts 19 - 21 inches</option>
-				</select>
-				<hr>
-				<button>Add to Cart</button>
-			</form>
-			<div class="social">
+			<tr id="cart-item-809255039" class="cart-item">
+				<td class="item image">
+					<a href="/products/jolly-roger?variant=809255039">
+						<img src="//cdn.shopify.com/s/files/1/0628/2445/products/jolly-roger-purple_small.jpg?v=1409281964"  alt="Jolly Roger - Purple Jolly Roger / Henry 2 1/4 inch Classic / XXL - adjusts 19 - 21 inches" />
+					</a>
+				</td>
+				<td class="item desc">
+					<a href="/collections/bowties#jolly-roger">Purple Jolly Roger - Henry 2 1/4 inch Classic / XXL - adjusts 19 - 21 inches
+					</a>
+				</td>
+				<td class="item price">$60.00</td>
+				<td class="item qty">
+					<input type="text" size="4" pattern="[0-9]*" name="updates[809255039]" id="quantity-809255039" class="quantity" value="1" min="1" onfocus="this.select();"/>
+				</td>
+				<td class="item remove">
+					<a href="/cart/change/809255039?quantity=0">Remove</a>
+				</td>
+				<td class="item total-price">$60.00</td>
+			</tr>
+			
+		
+			<tr id="cart-item-809254911" class="cart-item">
+				<td class="item image"><a href="/products/jolly-roger?variant=809254911">
+						<img src="//cdn.shopify.com/s/files/1/0628/2445/products/jolly-roger-red_small.jpg?v=1409281803"  alt="Jolly Roger - Red Jolly Roger / Philip 2 1/2 inch Butterfly / Regular - (fits to 17 ¾”)" />
+					  </a></td>
+				<td class="item desc"><a href="/collections/bowties#jolly-roger">Red Jolly Roger - Philip 2 1/2 inch Butterfly / Regular - (fits to 17 ¾”)</a></td>
+				<td class="item price">$60.00</td>
+				<td class="item qty"><input type="text" size="4" pattern="[0-9]*" name="updates[809254911]" id="quantity-809254911" class="quantity" value="1" min="1" onfocus="this.select();"/></td>
+				<td class="item remove"><a href="/cart/change/809254911?quantity=0">Remove</a></td>
+				<td class="item total-price">$2,360.00</td>
+			</tr>
+			
+			<tr class="subtotal">
+				<td colspan="6">Total: <strong>$180.00</strong></td>
+			</tr>
+		</tbody>
+	</table>
+	<button type="submit" id="update-cart" name="update" value="Update">Update</button>
+	<button type="submit" name="checkout" value="Checkout">Checkout</button>
+</form>
 
-        	<div class="google-plus">
-				<g:plusone size="medium" annotation="none"></g:plusone>
-			</div>
-
-			<div class="twitter">
-				<a href="https://twitter.com/share" class="twitter-share-button" data-via="RHanauerBowties">Tweet</a>
-			</div>
-
-			<div class="pinterest">
-				<a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="none">
-					<img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />
-				</a>
-			</div>
-
-			<div class="facebook">
-				<div class="fb-like" data-href="http://www.heatheramler.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-				<div id="fb-root"></div>
-			</div>
-				
-
-			</div>
-		</div>
-	</section>
-	<script>
-		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=639325336174399&version=v2.0";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-		(function(d){
-			var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
-			p.type = 'text/javascript';
-			p.async = true;
-			p.src = '//assets.pinterest.com/js/pinit.js';
-			f.parentNode.insertBefore(p, f);
-		}(document));
-		(function() {
-			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-			po.src = 'https://apis.google.com/js/platform.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		})();
-	</script>
+</section>
+	
 	<footer>
 		<section class="contact-info">
 			<div class="grid-container">
@@ -192,4 +179,8 @@
 			</ul>
 		</div>
 	</footer>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="assets/js/main-min.js"></script>
 </body>
+</html>

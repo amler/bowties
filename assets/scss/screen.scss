@@ -4,6 +4,7 @@
 @import 'modules/unsemantic-grid-responsive-tablet';
 @import 'modules/contact';
 @import 'modules/product-listings';
+@import 'modules/cart';
 @import 'modules/product-detail';
 @import 'modules/nav';
 @import 'modules/footer';
@@ -191,9 +192,9 @@ input {
 
 .feature-images {
 	height: 200px;
-	// overflow: hidden;
 	@include background-size(cover);
 }
+
 ///////////////////////////////
 // Text Only Pages
 ///////////////////////////////
@@ -214,3 +215,5 @@ input {
 		line-height: 1.7;
 	}
 }
+
+.search-results h2 {margin-top: 75px;}
