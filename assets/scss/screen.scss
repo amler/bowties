@@ -41,7 +41,7 @@ h4 {
 	margin: 10px 0;
 }
 
-p {
+p, ul {
 	color: #7a7a7a;
 	margin: 0;
 }
@@ -216,4 +216,28 @@ input {
 	}
 }
 
-.search-results h2 {margin-top: 75px;}
+///////////////////////////////
+// Search
+///////////////////////////////
+
+.search-results {
+	text-align: center;
+
+	h2 {
+		margin-top: 75px;
+	}
+}
+
+#terms-and-conditions,
+.search-results {
+	a {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.bottom-padding {
+	padding-bottom: 60px;
+}
