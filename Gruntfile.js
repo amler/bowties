@@ -3,6 +3,22 @@ module.exports = function(grunt) {
 	// Init
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		copy: {
+			images: {
+				expand: true,
+				cwd: 'src/assets/img',
+				src: '**',
+				dest: 'build/assets/img',
+				filter: 'isFile'
+			},
+			libraries: {
+				expand: true,
+				cwd: 'assets/js/libraries',
+				src: '**',
+				dest: 'build/assets',
+				filter: 'isFile'
+			},
+		},
 		jshint: {
 			options: {
 				browser: true,
@@ -21,19 +37,21 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'assets/css/screen.css': 'assets/scss/screen.scss'
+					'build/assets/style.css.liquid': 'assets/scss/screen.scss'
 				}
 			}
 		},
+
 		uglify: {
 			dist: {
 				files: {
-					'assets/js/main-min.js': [
+					'build/assets/scripts.js.liquid': [
 						'assets/js/main.js'
 					]
 				}
 			}
 		},
+
 		watch: {
 			css: {
 				files: [
@@ -52,7 +70,14 @@ module.exports = function(grunt) {
 		}
 	});
 
+		// Custom Tasks
+	grunt.task.registerTask('setup', 'Refreshes build directory for a new build process.', function() {
+		grunt.file.delete('build');
+		grunt.file.mkdir('build');
+	});	
+
 	// Load NPM Tasks
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-jshint'); // Validate files with JSHint.
 	grunt.loadNpmTasks('grunt-contrib-sass'); // Compile Sass to CSS.
 	grunt.loadNpmTasks('grunt-contrib-uglify'); // Minify files with UglifyJS.
@@ -60,7 +85,6 @@ module.exports = function(grunt) {
 
 	// Register Tasks
 	grunt.registerTask('javascript', ['jshint', 'uglify']);
-	grunt.registerTask('build', ['javascript', 'sass']);
+	grunt.registerTask('build', ['setup','javascript', 'sass', 'copy']);
 	grunt.registerTask('default', ['build']);
-	
 };
