@@ -228,7 +228,8 @@ input {
 	}
 }
 
-#terms-and-conditions,
+#terms-and-conditions ol li,
+.text,
 .search-results {
 	a {
 		text-decoration: underline;
@@ -240,4 +241,31 @@ input {
 
 .bottom-padding {
 	padding-bottom: 60px;
+}
+
+.your-shopping-cart {
+	h2 {
+		margin: 74px 0 40px;
+	}
+	p:first-child {
+		margin: 40px 0 80px;
+	}
+}
+
+img {
+	border-style: none;
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #7a7a7a;
+    margin: 1em 0;
+    padding: 0;
+}
+
+#terms-and-conditions hr {
+	margin: 50px 0;
 }

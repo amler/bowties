@@ -13,6 +13,7 @@
 		text-transform: uppercase;
 		padding-left: 0;
 		padding-right: 0;
+
 		
 		div {
 			height: 142px;
@@ -29,10 +30,17 @@
 
 		h2 {
 			font-size: 1em;
+			margin: 10px 0 0 0;
+			@include transition(color, 0.2s, linear);
 		}
 
 		p {
 			margin-top: -8px;
+		}
+		&:hover {
+			h2 {
+				color: #000;
+			}
 		}
 	}
 }

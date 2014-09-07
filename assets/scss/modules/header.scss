@@ -17,6 +17,7 @@ header {
 			padding: 5px 5px 5px 25px;
 			text-transform: uppercase;
 			@include retina-background-image('search', 5px 50%);
+			@include background-size(11px 11px);
 
 			&:focus {
 				background-color: #fff;
@@ -64,8 +65,9 @@ header {
 			}
 
 			&:first-child a {
-				@include retina-background-image('cart', 0 center);
 				padding: 0 25px 0 25px;
+				@include retina-background-image('cart', 0 center);
+				@include background-size(12px 10px);
 
 				@media only screen and (max-width: 875px) {
 					padding-right: 5%;
