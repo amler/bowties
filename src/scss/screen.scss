@@ -1,0 +1,314 @@
+@import 'modules/variables';
+@import 'helpers/mixins';
+@import 'modules/unsemantic-grid-responsive';
+@import 'modules/unsemantic-grid-responsive-tablet';
+@import 'modules/contact';
+@import 'modules/bowtie-styles';
+@import 'modules/cart';
+@import 'modules/color-shop';
+@import 'modules/product-listings';
+@import 'modules/product-detail';
+@import 'modules/nav';
+@import 'modules/footer';
+@import 'modules/header';
+
+body {
+	background: #fff;
+	font: 400 14px/1.8em 'Montserrat', Arial, serif;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0.125em;
+}
+
+h2, h3, h4, button {
+	color: $gold;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 1.714em;
+	letter-spacing: 0.25em;
+	margin: 0;
+	padding: 0;
+}
+
+h3 {
+	font-size: 0.929em;
+	margin: 0;
+}
+
+h4 {
+	font-size: 0.714em;
+	float: left;
+	margin: 10px 0;
+}
+
+p, ul {
+	color: #7a7a7a;
+	margin: 0;
+}
+
+
+a {
+	color: $gold;
+	text-decoration: none;
+	@include transition(color, 0.1s, linear);
+
+	&:hover {
+		color: #000;
+	}
+}
+
+
+a.active {
+	color: #fff;
+}
+
+.product-listing > nav a.active {
+	color: #000;
+}
+
+footer a:hover,
+header a:hover,
+header ~ nav a:hover {
+	color: #fff;
+}
+
+button {
+	background-color: $gold;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 0.929em;
+	letter-spacing: 0.25em;
+	margin: 30px 0;
+	padding: 15px 30px;
+	@include transition(background-color, 0.2s, linear);
+
+	&:hover {
+		background-color: darken($gold, 10%);
+	}
+}
+
+input {
+	font-family: inherit;
+}
+
+
+///////////////////////////////
+// Home
+///////////////////////////////
+.homepage-image {
+	background: url('banner-homepage.jpg') center center no-repeat fixed;
+	height: 500px;
+	position: relative;
+	text-align: center;
+	@include background-size(cover);
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(0, 0 , 0, 0.5);
+	}
+
+	p {
+		color: #fff;
+		font-size: 1.571em;
+		left: 50%;
+		line-height: 1.8;
+		margin: 0 auto;
+		max-width: 945px;
+		position: absolute;
+		text-transform: uppercase;
+		top: 50%;
+		width: 100%;
+		z-index: 10;
+		-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+		
+		@media only screen and (max-width: 955px) {
+			font-size: 1.286em;
+		}
+
+		@media only screen and (max-width: 600px) {
+			font-size: 1em;
+		}
+	}
+}
+
+.home {
+	padding-top: 45px;
+	padding-bottom: 75px;
+}
+
+.product a {
+	margin: 0 auto;
+	width: 230px;
+
+	img {
+		margin: 0 0 10px 0;
+		width: 100%;
+	}
+
+	h2 {
+		font-size: 1em;
+	}
+
+	p {
+		margin-top: -8px;
+	}
+}
+///////////////////////////////
+// B&W Banner Images
+///////////////////////////////
+
+.about {
+	background: url('banner-hanauer.jpg') center center no-repeat ;
+}
+
+.shipping {
+	background: url('banner-sewing-machine.jpg') center center no-repeat ;
+}
+
+.inqueries {
+	background: url('banner-template-sewing.jpg') center center no-repeat ;
+}
+
+.contact {
+	background: url('banner-threads.jpg') center top no-repeat ;
+}
+
+.listings {
+	background: url('banner-threads.jpg') center top no-repeat ;
+}
+
+.detail-page {
+	background: url('banner-bow-model.jpg') center top no-repeat ;
+}
+
+.feature-images {
+	height: 200px;
+	@include background-size(cover);
+}
+
+///////////////////////////////
+// Text Only Pages
+///////////////////////////////
+
+.text {
+	margin-bottom: 200px;
+	max-width: 750px;
+	h2 {
+		margin: 70px 0 55px 0;
+		padding: 0;
+	}
+	h2 + p, span {
+		font-size: 1.286em;
+	}
+
+	p {
+		margin: 37px 0;
+		line-height: 1.7;
+	}
+}
+
+///////////////////////////////
+// Search
+///////////////////////////////
+
+.search-results {
+	text-align: center;
+
+	h2 {
+		margin-top: 75px;
+	}
+}
+
+#terms-and-conditions ol li,
+.text,
+.search-results {
+	a {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.bottom-padding {
+	padding-bottom: 60px;
+}
+
+.your-shopping-cart {
+	h2 {
+		margin: 74px 0 40px;
+	}
+	p.empty-cart {
+		margin: 40px 0 80px;
+	}
+}
+
+img {
+	border-style: none;
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #7a7a7a;
+    margin: 1em 0;
+    padding: 0;
+}
+
+#terms-and-conditions hr {
+	margin: 50px 0;
+}
+
+.instructional {
+	.video-container {
+		margin: 50px auto;
+		.videoWrapper {
+			height: 0;
+			position: relative;
+			padding-bottom: 56.25%; /* 16:9 */
+			padding-top: 25px;
+
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	ul {
+		list-style-type: none;
+		margin-top: 55px;
+		padding: 0;
+		li:first-child { 
+			margin: 0;
+		}
+		li {
+			margin: 150px 0;
+		}
+		img {
+			float: left;
+			padding: 0 15px 15px 0;
+		}
+
+		p {
+			padding-top: 20px;
+		}
+
+	}
+}

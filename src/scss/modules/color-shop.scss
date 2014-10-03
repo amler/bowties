@@ -1,0 +1,51 @@
+.color-listing {
+	padding: 70px 0 20px;
+	.swatch {
+		margin: 40px 0 65px;
+		text-align: center;
+		text-transform: uppercase;
+		padding-left: 0;
+		padding-right: 0;
+		div {
+			border: 1px solid #7a7a7a;
+			height: 145px;
+			margin: 0 auto;
+			width: 200px;
+		}
+		h3 {
+			font-size: 1em;
+			margin: 10px 0 0 0;
+			@include transition(color, 0.2s, linear);
+		}
+
+		p {
+			margin-top: -8px;
+		}
+		&:hover {
+			h3 {
+				color: #000;
+			}
+			div {
+				opacity: 0.8;
+			}
+		}
+		.red {background-color:#C00000; }
+		.green {background-color:#008000; }
+		.black {background-color:#000; }
+		.silver {background-color:#C0C0C0; }
+		.navy {background-color:#000080; }
+		.purple {background-color:#800080; }
+		.pink {background-color:#FFC0CB; }
+		.teal {background-color:#008080; }
+		.yellow {background-color:#FFFF00; }
+		.orange {background-color:#FFA500; }
+		.blue {background-color:#0000FF; }
+		.brown {background-color:#A52A2A; }
+		.grey {background-color:#808080; }
+		.lavender {background-color:#E6E6FA; }
+		.coral {background-color:#FF7F50; }
+		.gold {background-color:$gold; }
+		.white {background-color:#FFFAFA; }
+		.burgundy {background-color:#800020; }
+	}
+}

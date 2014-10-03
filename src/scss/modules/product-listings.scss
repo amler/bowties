@@ -1,0 +1,47 @@
+.product-listing {
+	padding: 0 0 20px;
+
+	nav {
+		background-color: #fff;
+		border-bottom: 1px solid #ccc;
+		margin-bottom: 40px;
+	}
+ 
+	.product {
+		margin: 40px 0 65px;
+		text-align: center;
+		text-transform: uppercase;
+		padding-left: 0;
+		padding-right: 0;
+
+		
+		div {
+			height: 142px;
+			margin: 0 auto;
+			overflow: hidden;
+			width: 230px;
+		}
+
+		img {
+			display:block;
+			margin: 0 auto 10px;
+			vertical-align: middle;
+			width: 100%;
+		}
+
+		h2 {
+			font-size: 1em;
+			margin: 10px 0 0 0;
+			@include transition(color, 0.2s, linear);
+		}
+
+		p {
+			margin-top: -8px;
+		}
+		&:hover {
+			h2 {
+				color: #000;
+			}
+		}
+	}
+}

@@ -3,22 +3,6 @@ module.exports = function(grunt) {
 	// Init
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		copy: {
-			images: {
-				expand: true,
-				cwd: 'src/assets/img',
-				src: '**',
-				dest: 'build/assets/img',
-				filter: 'isFile'
-			},
-			libraries: {
-				expand: true,
-				cwd: 'assets/js/libraries',
-				src: '**',
-				dest: 'build/assets',
-				filter: 'isFile'
-			},
-		},
 		jshint: {
 			options: {
 				browser: true,
@@ -37,21 +21,19 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'build/assets/style.css.liquid': 'assets/scss/screen.scss'
+					'assets/screen.css': 'src/scss/screen.scss'
 				}
 			}
 		},
-
 		uglify: {
 			dist: {
 				files: {
-					'build/assets/scripts.js.liquid': [
-						'assets/js/main.js'
+					'assets/main-min.js': [
+						'src/js/main.js'
 					]
 				}
 			}
 		},
-
 		watch: {
 			css: {
 				files: [
@@ -62,22 +44,22 @@ module.exports = function(grunt) {
 			},	
 			js: {
 				files: [
-					'assets/js/*.js',
-					'assets/js/**/*.js'
+					'src/js/*.js',
+					'src/js/**/*.js'
 				],
 				tasks: ['javascript']
 			}
 		}
 	});
 
-		// Custom Tasks
-	grunt.task.registerTask('setup', 'Refreshes build directory for a new build process.', function() {
-		grunt.file.delete('build');
-		grunt.file.mkdir('build');
-	});	
+	grunt.registerTask('update-theme', 'Update Shopify Theme’s CSS & JavaScript.', function() {
+		var css = grunt.file.read('assets/screen.css');
+		var js = grunt.file.read('assets/main-min.js');
+		grunt.file.write('../r-hanauer-10431979/assets/style.css.liquid', css);
+		grunt.file.write('../r-hanauer-10431979/assets/scripts.js.liquid', js);
+	});
 
 	// Load NPM Tasks
-	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-jshint'); // Validate files with JSHint.
 	grunt.loadNpmTasks('grunt-contrib-sass'); // Compile Sass to CSS.
 	grunt.loadNpmTasks('grunt-contrib-uglify'); // Minify files with UglifyJS.
@@ -85,6 +67,7 @@ module.exports = function(grunt) {
 
 	// Register Tasks
 	grunt.registerTask('javascript', ['jshint', 'uglify']);
-	grunt.registerTask('build', ['setup','javascript', 'sass', 'copy']);
+	grunt.registerTask('build', ['javascript', 'sass', 'update-theme']);
 	grunt.registerTask('default', ['build']);
+	
 };
