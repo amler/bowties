@@ -75,24 +75,61 @@
 			</ul>
 		</nav>
 		<div class="grid-container">
-			<a href="#">
-				<div class="grid-25 tablet-grid-50 mobile-grid-100 product">
-					<div>
-						<img src="assets/temp/bowtie-1.jpg">
+
+
+			<div id="collection-filters">
+				<p>Browsing 81-120 of 279 products</p>
+				<div class="grid-50 mobile-100 yellow">
+					<div class="center">
+						<label for="sort-by">Sort by</label> 
+						<select class="sort-by">
+							<option value="manual">Featured</option>
+							<option value="price-ascending">Price: Low to High</option>
+							<option value="price-descending">Price: High to Low</option>
+							<option value="title-ascending">A-Z</option>
+							<option value="title-descending">Z-A</option>
+							<option value="created-ascending">Oldest to Newest</option>
+							<option value="created-descending">Newest to Oldest</option>
+							<option value="best-selling">Best Selling</option>
+						</select>
 					</div>
-					<h2>Tartans</h2>
-					<p>$60.00</p>
 				</div>
-			</a>
-			<a href="#">
-				<div class="grid-25 tablet-grid-50 mobile-grid-100 product">
-					<div>
-						<img src="assets/temp/bowtie-1.jpg">
-					</div>
-					<h2>Tartans</h2>
-					<p>$60.00</p>
+				<div class="grid-50 mobile-100 green">
+					<a href="/pages/shop-by-color" class="button ">Shop by Color</a>
 				</div>
-			</a>
+			</div>
+
+			<ul id="pagination">
+				
+					<a href="/collections/bowties?page=3" title="&lsaquo; Previous"><li>&lsaquo;</li></a>
+				
+				<li>
+					<a href="/collections/bowties?page=1" title="">1</a>
+				</li>
+				<li>
+					<a href="/collections/bowties?page=2" title="">2</a>
+				</li>		
+				<li>
+					<a href="/collections/bowties?page=3" title="">3</a>
+				</li>
+				<li class="active">
+					<span>4</span>
+				</li>		
+				<li>
+					<a href="/collections/bowties?page=5" title="">5</a>
+				</li>
+				<li>
+					<a href="/collections/bowties?page=6" title="">6</a>
+				</li>	
+				<li>
+					<a href="/collections/bowties?page=7" title="">7</a>
+				</li>
+				<li>
+					<a href="/collections/bowties?page=5" title="Next &rsaquo;">&rsaquo;</a>
+				</li>
+			</ul>
+	
+
 			<a href="#">
 				<div class="grid-25 tablet-grid-50 mobile-grid-100 product">
 					<div>
@@ -148,6 +185,35 @@
 				</div>
 			</a>
 		</div>
+			<ul id="pagination">
+				
+					<a href="/collections/bowties?page=3" title="&lsaquo; Previous"><li>&lsaquo;</li></a>
+				
+				<li>
+					<a href="/collections/bowties?page=1" title="">1</a>
+				</li>
+				<li>
+					<a href="/collections/bowties?page=2" title="">2</a>
+				</li>		
+				<li>
+					<a href="/collections/bowties?page=3" title="">3</a>
+				</li>
+				<li class="active">
+					<span>4</span>
+				</li>		
+				<li>
+					<a href="/collections/bowties?page=5" title="">5</a>
+				</li>
+				<li>
+					<a href="/collections/bowties?page=6" title="">6</a>
+				</li>	
+				<li>
+					<a href="/collections/bowties?page=7" title="">7</a>
+				</li>
+				<li>
+					<a href="/collections/bowties?page=5" title="Next &rsaquo;">&rsaquo;</a>
+				</li>
+			</ul>
 	</section>
 	
 	<footer>
@@ -188,5 +254,6 @@
 			</ul>
 		</div>
 	</footer>
+
 	<script src="assets/js/main-min.js"></script>
 </body>

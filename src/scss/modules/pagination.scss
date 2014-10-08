@@ -1,0 +1,46 @@
+#collection-filters {
+	background-color: #F0F0F0;
+	padding: 10px;
+	overflow: hidden;
+
+	p {
+		margin: 0 auto;
+		padding: 10px;
+		text-align: center;
+	}
+	.center {
+		margin: 25px auto 0;
+		padding: 0 20%;
+	}
+	.button {
+		// float: right;
+		display: block;
+		margin: 10px auto 15px;
+		text-align: center;
+		width: 35%;
+	}
+}
+#pagination {
+	display: block;
+	list-style: none;
+	margin: 10px auto;
+	padding: 0;
+	text-align: center;
+	li {
+		display: inline-block;
+	}
+	li.active {
+		color: #000;
+		margin: 0 0 10px 0;
+	}
+	a {
+		border: 1px solid #7a7a7a;
+		padding: 5px 10px;
+		@include transition(background-color, 0.1s, linear);
+
+		&:hover {
+			background-color: $gold;
+			color: #000;
+		}
+	}
+}
