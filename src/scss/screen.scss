@@ -1,5 +1,6 @@
 @import 'modules/variables';
 @import 'helpers/mixins';
+@import 'modules/bootstrap';
 @import 'modules/unsemantic-grid-responsive';
 @import 'modules/unsemantic-grid-responsive-tablet';
 @import 'modules/bowtie-styles';
@@ -313,4 +314,16 @@ hr {
 		}
 
 	}
+}
+
+
+
+
+
+.dropdown button,
+.dropdown .button {
+	margin: 0;
+}
+.dropdown-menu {
+	min-width: 225px;
 }

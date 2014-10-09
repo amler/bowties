@@ -79,23 +79,43 @@
 
 			<div id="collection-filters">
 				<p>Browsing 81-120 of 279 products</p>
-				<div class="grid-50 mobile-100 yellow">
-					<div class="center">
-						<label for="sort-by">Sort by</label> 
-						<select class="sort-by">
-							<option value="manual">Featured</option>
-							<option value="price-ascending">Price: Low to High</option>
-							<option value="price-descending">Price: High to Low</option>
-							<option value="title-ascending">A-Z</option>
-							<option value="title-descending">Z-A</option>
-							<option value="created-ascending">Oldest to Newest</option>
-							<option value="created-descending">Newest to Oldest</option>
-							<option value="best-selling">Best Selling</option>
-						</select>
-					</div>
+				<div class="grid-60 mobile-100 center">
+					<label for="sort-by">Sort by</label> 
+					<select class="sort-by">
+						<option value="manual">Featured</option>
+						<option value="price-ascending">Price: Low to High</option>
+						<option value="price-descending">Price: High to Low</option>
+						<option value="title-ascending">A-Z</option>
+						<option value="title-descending">Z-A</option>
+						<option value="created-ascending">Oldest to Newest</option>
+						<option value="created-descending">Newest to Oldest</option>
+						<option value="best-selling">Best Selling</option>
+					</select>
 				</div>
-				<div class="grid-50 mobile-100 green">
-					<a href="/pages/shop-by-color" class="button ">Shop by Color</a>
+				<div class="grid-40 mobile-100">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Shop by Color<span class="caret"></span></button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a tabindex="-1" href="red">Red</a></li>
+							<li><a tabindex="-1" href="green">Green</a></li>
+							<li><a tabindex="-1" href="black">Black</a></li>
+							<li><a tabindex="-1" href="silver">Silver</a></li>
+							<li><a tabindex="-1" href="navy">Navy</a></li>
+							<li><a tabindex="-1" href="purple">Purple</a></li>
+							<li><a tabindex="-1" href="pink">Pink</a></li>
+							<li><a tabindex="-1" href="teal">Teal</a></li>
+							<li><a tabindex="-1" href="yellow">Yellow</a></li>
+							<li><a tabindex="-1" href="orange">Orange</a></li>
+							<li><a tabindex="-1" href="blue">Blue</a></li>
+							<li><a tabindex="-1" href="brown">Brown</a></li>
+							<li><a tabindex="-1" href="grey">Grey</a></li>
+							<li><a tabindex="-1" href="lavender">Lavender</a></li>
+							<li><a tabindex="-1" href="coral">Coral</a></li>
+							<li><a tabindex="-1" href="gold">Gold</a></li>
+							<li><a tabindex="-1" href="white">White</a></li>
+							<li><a tabindex="-1" href="burgundy">Burgundy</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 
@@ -255,5 +275,6 @@
 		</div>
 	</footer>
 
-	<script src="assets/js/main-min.js"></script>
+	<script src="src/js/libraries/jquery-2.1.1.min.js"></script>
+	<script src="src/js/main.js"></script>
 </body>
