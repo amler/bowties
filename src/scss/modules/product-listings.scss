@@ -13,13 +13,30 @@
 		text-transform: uppercase;
 		padding-left: 0;
 		padding-right: 0;
+		position: relative;
 
-		
 		div {
 			height: 142px;
 			margin: 0 auto;
 			overflow: hidden;
 			width: 230px;
+
+			.sale {
+				background-color: #A21420;
+				border-radius: 50%;
+				font-size: 10px;
+				height: 35px;
+				left: 80%;
+				position: absolute;
+				top: 0;
+				width: 35px;
+
+				span {
+					color: #fff;
+					letter-spacing: normal;
+					line-height: 35px;
+				}
+			}
 		}
 
 		img {
