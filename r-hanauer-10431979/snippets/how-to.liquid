@@ -1,0 +1,70 @@
+<div class="video-container">
+	<!-- <div class="video-wrapper"> -->
+		<iframe src="//www.youtube.com/embed/VJv4Qh7zR3E" frameborder="0" allowfullscreen></iframe>
+	<!-- </div> -->
+</div>
+<hr/>
+<ul>
+	<li>
+		<img src="{{ 'step-1.gif' | asset_url }}" />
+
+		<p><strong>STEP 1</strong><br /> Start with end in right hand extending 1" below that in left hand.</p>
+	</li>
+	<li>
+		<img src="{{ 'step-2.gif' | asset_url }}" />
+		<p><strong>STEP 2</strong><br /> Cross the longer end over the short end then pass it back and up through the loop making a loose overhand knot. Tighten the knot so it fits snugly around your neck.</p>
+	</li>
+	<li>
+		<img src="{{ 'step-3.gif' | asset_url }}" />
+		<p><strong>STEP 3</strong><br /> Fold the lower hanging end up and to the left. Make sure the unfolded end is hanging down over the front of the bow.</p>
+	</li>
+	<li>
+		<img src="{{ 'step-4.gif' | asset_url }}" />
+		<p><strong>STEP 4</strong><br /> Pull the bow ends forward and gently squeeze them together, forming an opening behind them. Now, turn to the right and notice the opening you have created.</p>
+	</li>
+	<li>
+		<img src="{{ 'step-5.gif' | asset_url }}" />
+		<p><strong>STEP 5</strong><br /> With your left thumb or forefinger, push the middle part ot the tie with your finger through the opening from left to right, taking care not to let the end of the tie pass all the way through the opening. Use your right hand to help pull the back loop through.</p>
+	</li>
+	<li>
+		<img src="{{ 'step-6.gif' | asset_url }}" />
+		<p><strong>STEP 6</strong><br /> Your bow tie will be uneven at this point. Pull the loop ends to tighten the bow. This is where your personal touch comes in. You can make a small knot or large knot. To take your bow tie off, simply pull the straight ends.</p>
+	</li>
+</ul>
+<script type="text/javascript">
+	// Find all YouTube videos
+var $allVideos = $("iframe[src^='http://www.youtube.com']"),
+
+    // The element that is fluid width
+    $fluidEl = $(".video-container");
+
+// Figure out and save aspect ratio for each video
+$allVideos.each(function() {
+
+  $(this)
+    .data('aspectRatio', this.height / this.width)
+
+    // and remove the hard coded width/height
+    .removeAttr('height')
+    .removeAttr('width');
+
+});
+
+// When the window is resized
+$(window).resize(function() {
+
+  var newWidth = $fluidEl.width();
+
+  // Resize all videos according to their own aspect ratio
+  $allVideos.each(function() {
+
+    var $el = $(this);
+    $el
+      .width(newWidth)
+      .height(newWidth * $el.data('aspectRatio'));
+
+  });
+
+// Kick off one resize to fix all videos on page load
+}).resize();
+</script>

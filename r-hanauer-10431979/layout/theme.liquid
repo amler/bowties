@@ -1,0 +1,125 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->  
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	{% if template == 'index' %}
+	<title>{{ shop.name }} | {{ page_title }}</title>
+	{% elsif template == '404' %}
+	<title>Page Not Found | {{ shop.name }}</title>
+	{% else %}
+	<title>{{ page_title }} | {{ shop.name }}</title>
+	{% endif %}
+	{% if page_description %}
+	<meta name="description" content="{{ page_description }}" />
+	{% endif %}
+	<link rel="canonical" href="{{ canonical_url }}" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	{{ content_for_header }}
+	<link rel="apple-touch-icon" href="apple-touch-icon-57.png" sizes="57x57" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-60.png" sizes="60x60" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-72.png" sizes="72x72" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-76.png" sizes="76x76" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-114.png" sizes="114x114" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-120.png" sizes="120x120" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-144.png" sizes="144x144" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-148.png" sizes="148x148" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-152.png" sizes="152x152" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-288.png" sizes="288x288" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-512.png" sizes="512x512" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-1024.png" sizes="1024x1024" />
+	<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="favicon-16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="favicon-96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="favicon-160.png" sizes="160x160" />
+	<link rel="icon" type="image/png" href="favicon-196.png" sizes="196x196" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
+	{{ 'style.css' | asset_url | stylesheet_tag }}
+	{{ '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' | script_tag }}
+	{{ 'option_selection.js' | shopify_asset_url | script_tag }}
+	{{ 'jquery-2.1.1.min.js' | asset_url | script_tag }}
+	{{ 'scripts.js' | asset_url | script_tag }}
+</head>
+
+<body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+	<header>
+		<div class="grid-container">
+			<h1 class="grid-40  push-30 mobile-grid-100 grid-parent"><a href="/">{{ shop.name }}</a></h1>
+			<form class="grid-30 pull-40 mobile-grid-100 search" action="/search" method="get">
+				<input type="hidden" name="type" value="product" />
+				<input type="text" placeholder="Search" name="q" class="search" value="{{ search.terms | escape }}" onkeydown="keyPress()"/>
+			</form>
+			<div class="grid-30 mobile-grid-100 grid-parent">
+				<ul>
+					<li><a href="/cart">Cart: {{ cart.item_count }}</a></li>
+					<li><a href="/cart">Check out</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	{% if template == 'index' %}
+		{% include "index-banner" %}
+	{% else %}
+		{% include "feature-images" %}
+	{% endif %}
+	<nav id="primary-nav">
+		<ul>
+			{% for link in linklists.main-menu.links %}
+			<li><a href="{{ link.url }}">{{ link.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</nav>
+
+	{{ content_for_layout }}
+
+	<footer>
+		<section class="contact-info">
+			<div class="grid-container">
+				<div class="grid-33 mobile-grid-50">
+					<h3>Contact</h3>
+					<p>
+						<a href="mailto:support@bowties.com">support@bowties.com</a><br/>
+						<a href="tel:800-514-9707" class="phone">800-514-9707</a>
+					</p>
+					<p>
+						212 Main Street<br/>
+						Fort Mill, SC 29715<br/>
+						<a href="http://maps.google.com/?q=212%20Main%20St,%20Fort%20Mill,%20SC,%2029715" target="_blank">Get Directions</a>
+					</p>
+				</div>
+				<div class="grid-33 mobile-grid-50">
+					<h3>Orders</h3>
+					<p>
+						{% for link in linklists.footer.links %}
+							<a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a><br/>
+						{% endfor %}
+						<a href="{{ 'RHanauer_Fall_2014.pdf.zip' | file_url }}" target="_blank">Download Catalog</a>
+					</p>
+				</div>
+				<div class="grid-33 mobile-grid-50 social">
+					<h3>Follow Us</h3>
+					<a href="https://twitter.com/RHanauerBowties" class="twitter" alt="twitter" target="_blank">Twitter</a>
+					<a href="https://www.facebook.com/RHanauerBowties" class="facebook" alt="facebook" target="_blank">Facebook</a>
+					<a href="http://www.pinterest.com/rhanauerbowties" class="pinterest" alt="pinterest" target="_blank">Pinterest</a>
+				</div>
+			</div>
+		</section>
+		<div class="grid-container">
+			<h4>R. Hanauer, Inc. © 2014, All rights reserved.</h4>
+			<ul>
+				{% for link in linklists.sub-footer.links %}
+				<li><a href="{{ link.url }}" title="{{ link.targetitle }}">{{ link.title }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</footer>
+	{{ 'shop.js' | asset_url | script_tag }}
+</body>
+</html>

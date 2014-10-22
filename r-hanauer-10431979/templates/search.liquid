@@ -1,0 +1,113 @@
+<section class="product-listing grid-container">
+{% paginate search.results by 40 %}
+	{% if search.performed %}
+		{% if search.results_count == 0 %}
+			<div class="search-results bottom-padding">
+				<h2>Search Results</h2>
+				<p>Your search for <strong>“{{ search.terms | escape }}”</strong> didn’t have any results.</p>
+				<p>Try searching for something else.</p>
+			</div>
+		{% else %}
+		<div class="search-results">
+			<h2>Search Results</h2>
+			<p>Your search results for <strong>“{{ search.terms | escape }}”</strong>.</p>
+		</div>
+		<!-- START PAGINATION  -->
+		{% if search.results_count > 40 %}
+		<ul class="pagination">
+			{% if paginate.previous %}
+				<a href="{{ paginate.previous.url }}" title="{{ paginate.previous.title }}"><li>&lsaquo;</li></a>
+			{% else %}
+				<li ><span>&lsaquo;</span></li>
+			{% endif %}
+		
+			{% for part in paginate.parts %}
+				{% if part.is_link %}
+					<li><a href="{{ part.url }}">{{ part.title }}</a></li>
+				{% else %}
+				{% if part.title == paginate.current_page %}
+					<li class="active">
+						<span>{{ part.title }}</span>
+					</li>
+				{% else %}
+					<li>
+						<span>{{ part.title }}</span>
+					</li>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+
+		{% if paginate.next %}
+		<a href="{{ paginate.next.url }}" title="{{ paginate.next.title }}"><li>&rsaquo;</li></a>
+		{% else %}
+		<li ><span>&rsaquo;</span></li>
+		{% endif %}
+		</ul> 
+	{% endif %}
+	<!-- END PAGINATION  -->
+
+	{% for item in search.results %}
+		{% if item.type != '' %}
+		{% assign on_sale = false %}
+		<a href="{{ item.url }}">
+		{% if item.compare_at_price > item.price %}{% assign on_sale = true %}{% endif %}
+			<div class="grid-25 tablet-grid-50 mobile-grid-100 product">
+				<div>
+					{% if on_sale  %}<div class="sale"><span>Sale</span></div>{% endif %}
+					<img src="{{ item.featured_image | product_img_url: 'medium' }}" alt="{{ item.title | escape }}" />
+				</div>
+				<h2>{{ item.title | strip_html | truncate: 18 }}</h2>
+				<p>{{ item.price | money }}</p>
+			</div>
+		</a>
+		{% endif %}
+		{% else %}
+		<div class="search-results bottom-padding">
+			<h2>Search Results</h2>
+			<p>There are no products in this view.</p>
+		</div>
+	{% endfor %}
+	{% endif %}
+	{% else %}
+		<div class="search-results bottom-padding">
+			<h2>Search Results</h2>
+			<p>No search performed. If you are looking for something, please try our <a href="/">homepage</a>.</p>
+		</div>
+	{% endif %}	
+	<!-- START PAGINATION  -->
+</section>
+{% if search.results_count > 40 %}
+	<ul class="pagination">
+	{% if paginate.previous %}
+		<a href="{{ paginate.previous.url }}" title="{{ paginate.previous.title }}"><li>&lsaquo;</li></a>
+	{% else %}
+		<li ><span>&lsaquo;</span></li>
+	{% endif %}
+
+	<!-- {{ paginate.parts}} -->
+	{% for part in paginate.parts %}
+		{% if part.is_link %}
+		<li><a href="{{ part.url }}">{{ part.title }}</a></li>
+		{% else %}
+		{% if part.title == paginate.current_page %}
+		<li class="active">
+			<span>{{ part.title }}</span>
+		</li>
+		{% else %}
+		<li>
+			<span>{{ part.title }}</span>
+		</li>
+		{% endif %}
+	{% endif %}
+	{% endfor %}
+
+	{% if paginate.next %}
+	<a href="{{ paginate.next.url }}" title="{{ paginate.next.title }}"><li>&rsaquo;</li></a>
+	{% else %}
+	<li ><span>&rsaquo;</span></li>
+	{% endif %}
+	</ul> 
+{% endif %}
+
+	<!-- END PAGINATION  -->
+ {% endpaginate %}

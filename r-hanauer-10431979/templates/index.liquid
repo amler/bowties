@@ -1,0 +1,20 @@
+<section class="product-listing home">
+	<div class="grid-container">
+		{% assign collection = collections.frontpage %}
+		{% for product in collection.products limit:4 %}
+		<a href="{{ product.url }}">
+			<div class="grid-25 tablet-grid-50 mobile-grid-100 product">
+				<div>
+					<img src="{{ product.featured_image | product_img_url: 'medium' }}" alt="{{ product.title | escape }}">
+				</div>
+				<h2>{{ product.title }}</h2>
+				<p>{{ product.price | money }}</p>
+			</div>
+		</a>
+		{% else %}
+		<p>
+			You have no products in your Frontpage collection. <a href="http://www.shopify.com/admin/custom_collections">Add some.</a>
+		</p>
+		{% endfor %}
+	</div>
+</section>

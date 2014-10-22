@@ -1,0 +1,9 @@
+{% if page.handle  == 'about-us' %}
+	<section class="feature-images about"></section>
+{% elsif product %}
+	<section class="feature-images detail-page"></section>
+{% elsif collection %}
+	<section class="feature-images listings"></section>
+{% else %}
+	<section class="feature-images shipping"></section>
+{% endif %}

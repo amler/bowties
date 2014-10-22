@@ -1,0 +1,127 @@
+<section class="product-listing">
+	<nav id="secondary-nav">
+		<ul>
+			<li>
+				<a href="/collections/{{ collection.handle }} {% if collection.sort_by %}?sort_by={{ collection.sort_by }} {% endif %}" {% unless current_tags %} class="active"{% endunless %} {% if collection.handle %}>All</a>
+			{% elsif collection.current_type %}
+				<a href="{{ collection.current_type | url_for_type | sort_by: collection.sort_by }}">All</a>
+			{% elsif collection.current_vendor %}
+				<a href="{{ collection.current_vendor | url_for_vendor | sort_by: collection.sort_by }}">All</a>
+			{% endif %}
+			</li>
+			{% for tag in collection.all_tags %}
+				<li>
+					{{ tag | link_to_tag: tag }}
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+
+	<div class="grid-container">
+	{% paginate collection.products by 40 %}
+	{% if collection.products.size == 0 %}
+		<div class="search-results bottom-padding">
+			<p>Sorry, there are no products in {{ collection.title}}</p>
+		</div>
+	{% else %}
+		<div id="collection-filters">
+			<p>Browsing {{ paginate.current_offset | plus: 1 }}-{% if paginate.next %}{{ paginate.current_offset | plus: paginate.page_size }}{% else %}{{ paginate.items }}{% endif %} of {{ paginate.items }} {{ collection.products_count | pluralize: 'product', 'products' }}</p>
+			<div class="grid-60 mobile-100 center">
+				{% include "sort-by" %}
+			</div>
+			<div class="grid-40 mobile-100">
+				{% include "color-dropdown" %}
+			</div>
+		</div>
+
+	<!-- START PAGINATION  -->
+	{% if paginate.items > 40 %}
+		<ul class="pagination">
+		{% if paginate.previous %}
+			<a href="{{ paginate.previous.url }}" title="{{ paginate.previous.title }}"><li>&lsaquo;</li></a>
+		{% else %}
+			<li ><span>&lsaquo;</span></li>
+		{% endif %}
+
+		<!-- {{ paginate.parts}} -->
+		{% for part in paginate.parts %}
+			{% if part.is_link %}
+			<li><a href="{{ part.url }}">{{ part.title }}</a></li>
+			{% else %}
+			{% if part.title == paginate.current_page %}
+			<li class="active">
+				<span>{{ part.title }}</span>
+			</li>
+			{% else %}
+			<li>
+				<span>{{ part.title }}</span>
+			</li>
+			{% endif %}
+		{% endif %}
+		{% endfor %}
+
+		{% if paginate.next %}
+		<a href="{{ paginate.next.url }}" title="{{ paginate.next.title }}"><li>&rsaquo;</li></a>
+		{% else %}
+		<li ><span>&rsaquo;</span></li>
+		{% endif %}
+		</ul> 
+	{% endif %}
+	<!-- END PAGINATION  -->
+
+		<!--START PRODUCT -->
+		{% include "product-listing" %}
+		<!--END PRODUCT -->
+		{% endif %}
+	</div>
+	{% if paginate.items > 40 %}
+	<ul class="pagination">
+	{% if paginate.previous %}
+		<a href="{{ paginate.previous.url }}" title="{{ paginate.previous.title }}"><li>&lsaquo;</li></a>
+	{% else %}
+		<li ><span>&lsaquo;</span></li>
+	{% endif %}
+
+	<!-- {{ paginate.parts}} -->
+	{% for part in paginate.parts %}
+		{% if part.is_link %}
+		<a href="{{ part.url }}" title=""><li>{{ part.title }}</li></a>
+		{% else %}
+		{% if part.title == paginate.current_page %}
+		<li class="active">
+			<span>{{ part.title }}</span>
+		</li>
+		{% else %}
+		<li>
+			<span>{{ part.title }}</span>
+		</li>
+		{% endif %}
+	{% endif %}
+	{% endfor %}
+
+	{% if paginate.next %}
+	<a href="{{ paginate.next.url }}" title="{{ paginate.next.title }}"><li>&rsaquo;</li></a>
+	{% else %}
+	<li ><span>&rsaquo;</span></li>
+	{% endif %}
+	</ul> 
+	{% endif %}
+	{% endpaginate %}
+</section>
+<script>
+	Shopify.queryParams = {};
+	if (location.search.length) {
+		for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+			aKeyValue = aCouples[i].split('=');
+			if (aKeyValue.length > 1) {
+				Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+			}
+		}
+	}
+	jQuery('#sort-by')
+	.val('{{ collection.sort_by | default: collection.default_sort_by | escape }}')
+	.bind('change', function() {
+		Shopify.queryParams.sort_by = jQuery(this).val();
+		location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
+	});
+</script>

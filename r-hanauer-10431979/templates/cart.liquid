@@ -1,0 +1,45 @@
+<section class="grid-container {{ page_title | handle }}">
+	<h2>Your Cart</h2>
+
+	{% if cart.item_count > 0 %}
+	<form action="/cart" method="post" id="cart" class="cart">
+		<table>
+			<tbody>
+				{% for item in cart.items %}
+				<tr id="cart-item-{{item.variant.id}}" class="cart-item">
+					<td class="item image">
+						<a href="{{ item.url }}">
+							<img src="{{ item | img_url: 'compact' }}"  alt="{{ item.variant.title | escape }}" />
+						</a>
+					</td>
+					<td class="item desc">
+						<a href="{{ item.url }}">
+							{{ item.variant.option1 }} {{ item.variant.option2 }} {{ item.variant.option3 }}
+						</a>
+					</td>
+					<td class="item price">
+						<p>${{ item.price | money_without_currency }}</p>
+					</td>
+					<td class="item qty">
+						<input type="text" size="4" pattern="[0-9]*" name="updates[{{item.variant.id}}]" id="quantity-{{ item.variant.id }}" class="quantity" value="{{ item.quantity }}" min="1" onfocus="this.select();"/>
+					</td>
+					<td class="item remove">
+						<a href="/cart/change/{{item.variant.id}}?quantity=0">Remove</a>
+					</td>
+					<td class="item total-price">
+						<p>${{ item.line_price | money_without_currency }}</p>
+					</td>
+				</tr>
+				{% endfor %}
+				<tr class="subtotal">
+					<td colspan="6">Total: <strong>{{ cart.total_price | money }}</strong></td>
+				</tr>
+			</tbody>
+		</table>
+		<button type="submit" name="checkout" value="Checkout">Checkout</button>
+		<button type="submit" id="update-cart" name="update" value="Update">Update</button>
+	</form>
+	{% else %}
+	<p class="empty-cart">It appears that your cart is currently empty!</p>
+	{% endif %}
+</section>

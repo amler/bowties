@@ -1,0 +1,14 @@
+{% for product in collection.products %}
+	<a href="{{ product.url | within: collection }}" title="{{ product.featured_image.alt | escape }}">
+		<div class="grid-25 tablet-grid-50 mobile-grid-100 product">
+			<div>
+				{% if product.compare_at_price_max > product.price %}
+						<div class="sale"><span>Sale</span></div>
+				{% endif %}
+				<img src="{{ product.featured_image | product_img_url: 'medium' }}" alt="{{ product.title | escape }}" />
+			</div>
+			<h2>{{ product.title | strip_html | truncate: 18 }}</h2>
+			<p>{{ product.price | money }}</p>
+		</div>
+	</a>
+{% endfor %}

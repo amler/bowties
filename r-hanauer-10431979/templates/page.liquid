@@ -1,0 +1,23 @@
+{% if page.handle == 'terms-and-conditions' %}
+<section class="grid-container text" id="{{ page_title | handle }}">
+	<h2>{{ page.title }}</h2>
+	{{ page.content }}
+</section>
+{% elsif page.handle == 'bow-tie-styles' %}
+<section class="styles">
+	<div class="grid-container">
+		<h2>{{ page.title }}</h2>
+	</div>
+	{% include "bowtie-style" %}
+</section>
+{% elsif page.handle == 'how-to-tie-a-bow-tie' %}
+<section class="grid-container text instructional">
+	<h2>{{ page.title }}</h2>
+	{% include "how-to" %}
+</section>
+{% else %}
+<section class="grid-container text">
+	<h2>{{ page.title }}</h2>
+	{{ page.content }}
+</section>
+{% endif %}
