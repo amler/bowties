@@ -15,6 +15,11 @@
 	<h2>{{ page.title }}</h2>
 	{% include "how-to" %}
 </section>
+{% elsif page.handle == 'catalog-request' %}
+<section class="grid-container text">
+	<h2>{{ page.title }}</h2>
+	{% include "catalog-request" %}
+</section>
 {% else %}
 <section class="grid-container text">
 	<h2>{{ page.title }}</h2>

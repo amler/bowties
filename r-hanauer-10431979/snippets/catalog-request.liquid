@@ -1,0 +1,57 @@
+{% form 'contact' %}
+
+{% if form.posted_successfully? %}
+	<div class="successForm feedback">
+		<p>Thanks for contacting us! We'll get back to you as soon as possible.</p>
+	</div>
+{% endif %}
+
+{% if form.errors %}
+	<div class="errorForm feedback">
+		<!-- {{ form.errors.size }} or {{ form.errors | size }} -->
+		<p>Oops, sorry. We were unable to submit your inquiry because it contained {{ form.errors | size | pluralize: 'an error', 'a few errors' }}. Please correct the following and submit again:</p>
+		{% for field in form.errors %}
+			<p>The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</p>
+		{% endfor %}
+	</div>
+{% endif %}
+
+	<div id="contactFormWrapper">
+		<p class="grid-50 mobile-grid-100">
+			<label>Name:</label><br/>
+			<input type="text" name="contact[name]" placeholder="John Smith" required/>
+		</p>
+		<p class="grid-50 mobile-grid-100">
+			<label>Street 1:</label><br/>
+			<input type="street1" name="contact[street 1]" placeholder="Street Address 1" required/>
+		</p>
+		<p class="grid-50 mobile-grid-100">
+			<label>Street 2:</label><br/>
+			<input type="street2" name="contact[street 2]" placeholder="Street Address 2" required/>
+		</p>
+		<p class="grid-50 mobile-grid-100">
+			<label>City:</label><br/>
+			<input type="city" name="contact[city]" placeholder="City" required/>
+		</p> 
+		<p class="grid-50 mobile-grid-100">
+			<label>State:</label><br/>
+			<input type="state" name="contact[state]" placeholder="State" required/>
+		</p> 
+		<p class="grid-50 mobile-grid-100">
+			<label>Zip:</label><br/>
+			<input type="zipcode" name="contact[zip]" placeholder="Zip Code" required/>
+		</p> 
+		<p>
+			<button type="submit" id="contactFormSubmit" value="submit">Submit</button>
+		</p>
+	</div><!-- contactWrapper -->
+
+{% endform %}
+
+<style>
+.contact-form {margin:1em 0}
+.feedback {padding:0.5em 0.7em;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px}
+.feedback p {padding:0.5em 0 !important;margin:0 !important}
+.successForm {background:#BDE0A8;color:green}
+.errorForm {background:#EEBDBD;color:red}
+</style>

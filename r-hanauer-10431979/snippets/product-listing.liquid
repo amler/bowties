@@ -8,7 +8,7 @@
 				<img src="{{ product.featured_image | product_img_url: 'medium' }}" alt="{{ product.title | escape }}" />
 			</div>
 			<h2>{{ product.title | strip_html | truncate: 18 }}</h2>
-			<p>{{ product.price | money }}</p>
+			<p>{% include 'shappify-qb-min-price' with product %}</p>
 		</div>
 	</a>
 {% endfor %}

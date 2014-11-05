@@ -1,3 +1,5 @@
+<!-- Bold Apps: Quantity Breaks -->
+{% include 'shappify-qb-no-select' %}
 <section class="grid-container product-detail">
 <!--START PRODUCT-->
 	<meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
@@ -30,25 +32,28 @@
 			{% assign variant = product.selected_or_first_available_variant %}
 			<p id="product-price">
 				{% if variant.compare_at_price > variant.price %}
-				<span class="product-price on-sale" itemprop="price">{{ variant.price | money }}</span>&nbsp;<del class="product-compare-price">{{ variant.compare_at_price_max | money }}</del>
+				<span class="product-price on-sale" itemprop="price">{% include 'shappify-qb-min-price' with product %}</span>&nbsp;<del class="product-compare-price">{{ variant.compare_at_price_max | money }}</del>
 				{% else %}
-				<span class="product-price" itemprop="price">{{ variant.price | money }}</span>
+				<span class="product-price" itemprop="price">{% include 'shappify-qb-min-price' with product %}</span>
 				{% endif %}
 			</p>
 
 			<p>{{ product.description }}</p>
 			<hr>
-			{% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+			{% if shappify_qb_options_count == 1 and product.variants.first.title contains 'Default' %}
 				{% assign hide_default_title = true %}
 			{% endif %}
 			<div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
 				<select id="product-select" name="id" class="hidden">
 				{% for variant in product.variants %}
+                  {% if variant.metafields.shappify_qb.qb_hide == "1" %}{% else %}
 					<option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
-				{% endfor %}
+				{% endif %}
+                  {% endfor %}
 				</select>
 			</div>
 			<hr>
+          <div id="shappify-qty-msg"></div>
 			<button type="submit" id="add" class="btn add-to-cart">Add To Cart</button>	
 			<div class="social">
 				{% include 'social-sharing' %}

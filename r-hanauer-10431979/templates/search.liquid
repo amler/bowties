@@ -57,7 +57,7 @@
 					<img src="{{ item.featured_image | product_img_url: 'medium' }}" alt="{{ item.title | escape }}" />
 				</div>
 				<h2>{{ item.title | strip_html | truncate: 18 }}</h2>
-				<p>{{ item.price | money }}</p>
+				<p>{% include 'shappify-qb-min-price' with item %}</p>
 			</div>
 		</a>
 		{% endif %}

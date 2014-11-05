@@ -1,9 +1,9 @@
 {
-  "current": "Slate",
+  "current": {
+    "breaks": "",
+    "customer_layout": "theme",
+    "use_logo": "false"
+  },
   "presets": {
-    "Slate": {
-      "use_logo": false,
-      "customer_layout": "theme"
-    }
   }
 }
