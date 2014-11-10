@@ -343,3 +343,23 @@ hr {
 .dropdown-menu {
 	min-width: 225px;
 }
+
+
+
+
+/* Oct 28, 2014 -- Fixing footer social icons on Retina/HiDPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  footer section .social a.twitter {
+    background-size: 27px 135px;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  footer section .social a.facebook {
+    background-size: 27px 135px;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  footer section .social a.pinterest {
+    background-size: 27px 135px;
+  }
+}
